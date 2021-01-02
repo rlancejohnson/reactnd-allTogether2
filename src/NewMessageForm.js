@@ -19,7 +19,7 @@ export default class NewMessageForm extends Component {
     }
 
     isDisabled = () => {
-        return this.state.message === ''
+        return this.state.message.text === ''
     };
 
     addNewMessage = (event) => {

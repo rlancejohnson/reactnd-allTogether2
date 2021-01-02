@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-/*
-This exercise will help you practice many of your newly aquired React skills.
-
-The instructions are included in the `instructions.md` file.
-*/
-
 const users = [{ username: 'Amy' }, { username: 'John' }];
 
 const messages = [
@@ -16,7 +10,7 @@ const messages = [
   { username: 'John', text: 'Hi, Amy! Good, you?' },
 ];
 
-class App extends Component {
+export default class App extends Component {
   /*
   If the user did not type anything, he/she should not be
   allowed to submit.
@@ -94,5 +88,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ChatWindow from './ChatWindow';
+import AddUserForm from './AddUserForm.js';
+import ChatWindow from './ChatWindow.js';
 
 export default class App extends Component {
   state = {
-    users: [
-      { username: 'Amy' }, 
-      { username: 'John' }
-    ],
-    messages: [
-      { username: 'Amy', text: 'Hi, Jon!' },
-      { username: 'Amy', text: 'How are you?' },
-      { username: 'John', text: 'Hi, Amy! Good, you?' },
-    ]
+    users: [],
+    messages: []
   }
 
   addNewMessage = (message) => {
     this.setState((prevState) => ({
       ...prevState,
       messages: [...prevState.messages, message]
+    }))
+  }
+
+  addNewUser = (user) => {
+    this.setState((prevState) => ({
+      ...prevState,
+      users: [...prevState.users, user]
     }))
   }
 
@@ -32,7 +33,10 @@ export default class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
-        <div  className="container">
+        <div>
+          <AddUserForm addNewUser={this.addNewUser}/>
+        </div>
+        <div className="container">
           {users.map((user) => (
             <ChatWindow user={user} messages={messages} addNewMessage={this.addNewMessage}/>
           ))}

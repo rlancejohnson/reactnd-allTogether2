@@ -41,11 +41,12 @@ export default class NewMessageForm extends Component {
         const { message } = this.state
 
         return (
-            <div>
+            <div className="">
               <form className="input-group"
                     onSubmit={this.addNewMessage}>
                 <input type="text" 
-                       className="form-control" placeholder="Enter your message..."
+                       className="form-control" 
+                       placeholder="Enter your message..."
                        value={message.text}
                        onChange={this.setMessage}/>
                 <div className="input-group-append">
